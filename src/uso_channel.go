@@ -11,6 +11,7 @@ func say(text string, c chan<- string) {
 
 func main() {
 	// Asigna 1 goroutine, se puede dejar vacío pero se recomienda dejar un valor por buena práctica
+	// El segundo parámetro indica cuántos datos en simultáneo va manejar ese canal
 	c := make(chan string, 1)
 	fmt.Println("Hello")
 	go say("Bye", c)
